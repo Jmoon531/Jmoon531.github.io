@@ -1,0 +1,15 @@
+<div class="md-copyright" style="max-width: 100%;">
+  {% if config.copyright %}
+    <div class="md-copyright__highlight" style="display: grid;grid-template-columns: 1fr 1fr;">
+      <span>{{ config.copyright }}</span>
+      <span style="justify-self: end;">Contact me via e-mail: Jmoon531@foxmail.com</span>
+    </div>
+  {% endif %}
+  
+  {% if not config.extra.generator == false %}
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  {% endif %}
+</div>

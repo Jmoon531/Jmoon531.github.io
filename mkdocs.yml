@@ -1,0 +1,400 @@
+site_name: Jmoon's Blog
+site_description: 江岳亮的博客
+site_author: Jmoon
+
+theme:
+  name: material
+  language: zh
+  custom_dir: overrides # 自定义主题目录
+  font:
+    code: Source Code Pro
+#   favicon: logo
+  icon:
+    # logo: logo
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs #导航选项卡
+    - navigation.instant
+    - navigation.instant.progress #导航进度
+    - navigation.tracking #URL会自动更新为目录中突出显示的活动锚点
+    - navigation.path #导航路径
+    - navigation.top #返回顶部功能
+    - navigation.indexes #索引页面
+    - navigation.prune #只有可见的导航项包含在渲染的HTML中
+    #- header.autohide #自动隐藏标题栏
+    - navigation.footer #底部导航
+    - toc.follow #目录跟随
+    - toc.integrate #目录集成
+    - search.suggest #搜索建议
+    - search.highlight #搜索结果高亮
+    - search.share #搜索结果页面分享
+    # - content.action.edit # 代码查看按钮
+    # - content.action.view # 代码修改按钮
+    - content.code.copy # 代码块复制按钮
+    - content.code.annotate
+  palette:
+    - scheme: slate
+      primary: black
+      accent: light
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到浅色模式
+    - scheme: default
+      primary: white
+      accent: dark
+      toggle:
+        icon: material/weather-night
+        name: 切换到黑暗模式
+
+markdown_extensions:
+  - footnotes
+  - pymdownx.arithmatex:
+      generic: true
+  - tables # 表格支持
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - admonition
+  - md_in_html
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      use_pygments: true #控制是在构建时使用Pygments进行高亮还是在浏览器中使用JavaScript语法高亮器进行高亮。
+      anchor_linenums: true
+      auto_title: true #自动为所有代码块添加一个标题
+      line_spans: __span
+      pygments_lang_class: true #指示Pygments添加一个CSS类来标识代码块的语言
+      linenums: true #为所有代码块添加行号
+      linenums_style: pymdownx-inline # 行号样式
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - toc:
+      permalink: "#" #在标题末尾生成永久链接
+      separator: "_" #将标题id中的空格替换成'_'
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  generator: true # 显示使用Material for MkDocs制作
+
+plugins:
+  - statistics: # 字数统计插件：https://github.com/TonyCrane/mkdocs-statistics-plugin
+      words_per_minute: 50
+  - glightbox: # 图片查看插件
+      touchNavigation: true
+      loop: false
+      zoomable: true
+      draggable: false
+      auto_caption: true
+      background: #000000
+  - search
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      cache_safe: true
+
+extra_css:
+  - /assets/stylesheets/font.css
+  - /assets/stylesheets/custom.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
+extra_javascript:
+  - /assets/javascripts/custom.js
+  - /assets/javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+exclude_docs: |
+  **/node_modules
+
+copyright: Copyright &copy; 2025 J-moon #版权信息
+
+nav:
+  - home: index.md
+  - Java基础:
+    - Java基础:
+      - 1-IO: Java基础/Java基础/1-IO.md
+      - 2-进程与线程 和 进程间的通信方式: Java基础/Java基础/2-进程与线程 和 进程间的通信方式.md
+      - 3-BIO之网络IO: Java基础/Java基础/3-BIO之网络IO.md
+      - 4-NIO之缓冲区和通道: Java基础/Java基础/4-NIO之缓冲区和通道.md
+      - 5-NIO之选择器与IO多路复用: Java基础/Java基础/5-NIO之选择器与IO多路复用.md
+      - 6-NIO之网络编程应用实例-群聊系统: Java基础/Java基础/6-NIO之网络编程应用实例-群聊系统.md
+      - 7-ArrayList源码笔记: Java基础/Java基础/7-ArrayList源码笔记.md
+      - 8-HashMap源码笔记: Java基础/Java基础/8-HashMap源码笔记.md
+      - 9-从观察者模式理解协程: Java基础/Java基础/9-从观察者模式理解协程.md
+      - Git 提交规范: Java基础/Java基础/Git 提交规范.md
+      - IO: Java基础/Java基础/IO.md
+      - Lambda: Java基础/Java基础/Lambda.md
+      - Stream 和 Optional: Java基础/Java基础/Stream 和 Optional.md
+    - Linux:
+      - 1-目录结构: Java基础/Linux/1-目录结构.md
+      - 2-vim: Java基础/Linux/2-vim.md
+      - 3-用户和用户组管理: Java基础/Linux/3-用户和用户组管理.md
+      - 4-文件管理: Java基础/Linux/4-文件管理.md
+      - 5-磁盘管理: Java基础/Linux/5-磁盘管理.md
+      - 6-网络管理: Java基础/Linux/6-网络管理.md
+      - 7-进程管理: Java基础/Linux/7-进程管理.md
+      - 8-包管理: Java基础/Linux/8-包管理.md
+      - 9-其它命令: Java基础/Linux/9-其它命令.md
+      - 10-shell脚本简介: Java基础/Linux/10-shell脚本简介.md
+      - 11-shell变量: Java基础/Linux/11-shell变量.md
+      - 12-运算符: Java基础/Linux/12-运算符.md
+      - 13-流程控制: Java基础/Linux/13-流程控制.md
+      - 14- 函数: Java基础/Linux/14- 函数.md
+      - 15-shell工具: Java基础/Linux/15-shell工具.md
+    - 并发编程:
+      - 01-并发编程基础笔记: Java基础/并发编程/01-并发编程基础笔记.md
+      - 02-多线程编程模型: Java基础/并发编程/02-多线程编程模型.md
+      - 03-线程安全的集合: Java基础/并发编程/03-线程安全的集合.md
+      - 04-Callable接口 和 FutureTask: Java基础/并发编程/04-Callable接口 和 FutureTask.md
+      - 05-CompletableFuture: Java基础/并发编程/05-CompletableFuture.md
+      - 06-锁 和 同步器: Java基础/并发编程/06-锁 和 同步器.md
+      - 07-ThreadLocal原理: Java基础/并发编程/07-ThreadLocal原理.md
+      - 08-ConcurrentHashMap-jdk15源码解读: Java基础/并发编程/08-ConcurrentHashMap-jdk15源码解读.md
+      - 09-BolckingQueue: Java基础/并发编程/09-BolckingQueue.md
+      - 10-线程池: Java基础/并发编程/10-线程池.md
+      - 11-查看和杀死线程: Java基础/并发编程/11-查看和杀死线程.md
+      - 12-对象头结构: Java基础/并发编程/12-对象头结构.md
+      - 13-Monitor与重量级锁的加锁原理: Java基础/并发编程/13-Monitor与重量级锁的加锁原理.md
+      - 14-轻量级锁的加锁原理: Java基础/并发编程/14-轻量级锁的加锁原理.md
+      - 15-锁膨胀和自旋优化: Java基础/并发编程/15-锁膨胀和自旋优化.md
+      - 16-偏向锁及锁消除: Java基础/并发编程/16-偏向锁及锁消除.md
+      - 17-volatile: Java基础/并发编程/17-volatile.md
+      - 18-DCL单例模式: Java基础/并发编程/18-DCL单例模式.md
+      - 19-CAS及自旋锁: Java基础/并发编程/19-CAS及自旋锁.md
+      - 20-Unsafe类: Java基础/并发编程/20-Unsafe类.md
+      - 21-原子类与ABA问题: Java基础/并发编程/21-原子类与ABA问题.md
+      - 22-AQS: Java基础/并发编程/22-AQS.md
+  - Web开发:
+    - MyBatis:
+      - 1.MyBatis入门-增删改查: Web开发/MyBatis/1.MyBatis入门-增删改查.md
+      - 2.核心配置文件 与 引入映射文件的方式: Web开发/MyBatis/2.核心配置文件 与 引入映射文件的方式.md
+      - 3.入参: Web开发/MyBatis/3.入参.md
+      - 4.动态SQL: Web开发/MyBatis/4.动态SQL.md
+      - 5.返回值 - 数据的行数: Web开发/MyBatis/5.返回值 - 数据的行数.md
+      - 6.返回值 - resultType 和 resultMap: Web开发/MyBatis/6.返回值 - resultType 和 resultMap.md
+      - 7.注解开发: Web开发/MyBatis/7.注解开发.md
+      - 8.MyBatis-plus: Web开发/MyBatis/8.MyBatis-plus.md
+    - Servlet:
+      - 0-Servlet的本质: Web开发/Servlet/0-Servlet的本质.md
+      - 1-Servlet生命周期: Web开发/Servlet/1-Servlet生命周期.md
+      - 2-ServletConfig接口: Web开发/Servlet/2-ServletConfig接口.md
+      - 3-ServletContext接口: Web开发/Servlet/3-ServletContext接口.md
+      - 4-抽象类GenericServlet（内含 模板方法模式）: Web开发/Servlet/4-抽象类GenericServlet（内含 模板方法模式）.md
+      - 5-HttpServlet接口: Web开发/Servlet/5-HttpServlet接口.md
+      - 6- HttpServletRequest接口 和 HttpServletResponse接口: Web开发/Servlet/6- HttpServletRequest接口 和 HttpServletResponse接口.md
+      - 7-Cookie: Web开发/Servlet/7-Cookie.md
+      - 8-Session: Web开发/Servlet/8-Session.md
+      - 9-总结: Web开发/Servlet/9-总结.md
+      - 10-过滤器: Web开发/Servlet/10-过滤器.md
+      - 11-监听器（内含观察者模式）: Web开发/Servlet/11-监听器（内含观察者模式）.md
+    - Spring:
+      - 1-IOC的本质: Web开发/Spring/1-IOC的本质.md
+      - 2-XML配置Bean: Web开发/Spring/2-XML配置Bean.md
+      - 3-注解配置Bean: Web开发/Spring/3-注解配置Bean.md
+      - 4-代理模式: Web开发/Spring/4-代理模式.md
+      - 5-AOP: Web开发/Spring/5-AOP.md
+      - 6-声明式事务: Web开发/Spring/6-声明式事务.md
+      - 7-同一个类的方法之间调用@Transactional注解不生效: Web开发/Spring/7-同一个类的方法之间调用@Transactional注解不生效.md
+    - SpringBoot:
+      - 0.原理: Web开发/SpringBoot/0.原理.md
+      - 1.SpringBoot入门: Web开发/SpringBoot/1.SpringBoot入门.md
+      - 2.环境配置: Web开发/SpringBoot/2.环境配置.md
+      - 3.日志: Web开发/SpringBoot/3.日志.md
+      - 4.测试: Web开发/SpringBoot/4.测试.md
+      - 5.Web开发-场景配置: Web开发/SpringBoot/5.Web开发-场景配置.md
+      - 6.Web开发-静态资源规则、欢迎页、Favicon、路径匹配、Thymeleaf: Web开发/SpringBoot/6.Web开发-静态资源规则、欢迎页、Favicon、路径匹配、Thymeleaf.md
+      - 7.Web开发-内容协商: Web开发/SpringBoot/7.Web开发-内容协商.md
+      - 8.Web开发-错误处理: Web开发/SpringBoot/8.Web开发-错误处理.md
+      - 9.Web开发-嵌入式容器: Web开发/SpringBoot/9.Web开发-嵌入式容器.md
+      - 10.数据访问-整合MyBatis: Web开发/SpringBoot/10.数据访问-整合MyBatis.md
+    - SpringCloud:
+      - 1-RestTemplate: Web开发/SpringCloud/1-RestTemplate.md
+      - 2-Consul: Web开发/SpringCloud/2-Consul.md
+      - 3-spring-cloud-loadbalancer: Web开发/SpringCloud/3-spring-cloud-loadbalancer.md
+      - 4-OpenFeign: Web开发/SpringCloud/4-OpenFeign.md
+      - 5-Resilience4j: Web开发/SpringCloud/5-Resilience4j.md
+      - 6-Micrometer Tracing + Zipkin: Web开发/SpringCloud/6-Micrometer Tracing + Zipkin.md
+      - 7-Gateway: Web开发/SpringCloud/7-Gateway.md
+      - 8-分布式事务与Seata: Web开发/SpringCloud/8-分布式事务与Seata.md
+    - SpringMVC:
+      - 7、文件的上传与下载: Web开发/SpringMVC/7、文件的上传与下载.md
+      - 1-理解SpringMVC: Web开发/SpringMVC/1-理解SpringMVC.md
+      - 2-@RequestMapping注解: Web开发/SpringMVC/2-@RequestMapping注解.md
+      - 3-RESTful 与 过滤器: Web开发/SpringMVC/3-RESTful 与 过滤器.md
+      - 4-获取请求中的信息: Web开发/SpringMVC/4-获取请求中的信息.md
+      - 5-ModelAndView（域对象共享数据 与 视图）: Web开发/SpringMVC/5-ModelAndView（域对象共享数据 与 视图）.md
+      - 6-往响应体中写数据: Web开发/SpringMVC/6-往响应体中写数据.md
+      - 8-拦截器: Web开发/SpringMVC/8-拦截器.md
+      - 9-异常处理器: Web开发/SpringMVC/9-异常处理器.md
+      - 10-全注解配置SpringMVC: Web开发/SpringMVC/10-全注解配置SpringMVC.md
+      - 11-SpringMVC的执行流程: Web开发/SpringMVC/11-SpringMVC的执行流程.md
+    - SpringSecurity:
+      - SpringSecurity入门: Web开发/SpringSecurity/SpringSecurity入门.md
+      - 跨域: Web开发/SpringSecurity/跨域.md
+  - 大数据开发:
+    - Flink:
+      - 0-Flink思维导图: 大数据开发/Flink/0-Flink思维导图.md
+      - 1-Flink快速上手: 大数据开发/Flink/1-Flink快速上手.md
+      - 2-Flink运行架构: 大数据开发/Flink/2-Flink运行架构.md
+      - 3-slot、并行度与任务: 大数据开发/Flink/3-slot、并行度与任务.md
+      - 4-数据传输的方式: 大数据开发/Flink/4-数据传输的方式.md
+      - 5-Flink程序与数据流: 大数据开发/Flink/5-Flink程序与数据流.md
+      - 6-Source: 大数据开发/Flink/6-Source.md
+      - 7-DataStream 的 Transform 算子: 大数据开发/Flink/7-DataStream 的 Transform 算子.md
+      - 8-DataStream 的 Transform 算子（续）: 大数据开发/Flink/8-DataStream 的 Transform 算子（续）.md
+      - 9-富函数(RichFunction): 大数据开发/Flink/9-富函数(RichFunction).md
+      - 10-Sink: 大数据开发/Flink/10-Sink.md
+      - 11-window的种类 和 时间语义: 大数据开发/Flink/11-window的种类 和 时间语义.md
+      - 12-Window API 之 创建窗口: 大数据开发/Flink/12-Window API 之 创建窗口.md
+      - 13-1-Window API 之 聚合算子: 大数据开发/Flink/13-1-Window API 之 聚合算子.md
+      - 13-2-Window API 之 Trigger 和 Evictor: 大数据开发/Flink/13-2-Window API 之 Trigger 和 Evictor.md
+      - 14-数据流类型转换总结: 大数据开发/Flink/14-数据流类型转换总结.md
+      - 15-watermark: 大数据开发/Flink/15-watermark.md
+      - 16-watermark的传递: 大数据开发/Flink/16-watermark的传递.md
+      - 17-Window API 之 处理迟到数据: 大数据开发/Flink/17-Window API 之 处理迟到数据.md
+      - 18-并行流watermark传递测试: 大数据开发/Flink/18-并行流watermark传递测试.md
+      - 19-状态编程 与 状态后端: 大数据开发/Flink/19-状态编程 与 状态后端.md
+      - 20-Flink容错机制: 大数据开发/Flink/20-Flink容错机制.md
+      - 21-状态一致性: 大数据开发/Flink/21-状态一致性.md
+      - 22-ProcessFunction API: 大数据开发/Flink/22-ProcessFunction API.md
+      - 23-案例一（统计）：热门页面: 大数据开发/Flink/23-案例一（统计）：热门页面.md
+      - 24-案例二（统计）：布隆过滤器的应用: 大数据开发/Flink/24-案例二（统计）：布隆过滤器的应用.md
+      - 25-案例三（风控）：检测连续登录失败事件: 大数据开发/Flink/25-案例三（风控）：检测连续登录失败事件.md
+      - 26-案例四（风控+统计）：过滤异常点击行为 和 统计广告点击次数: 大数据开发/Flink/26-案例四（风控+统计）：过滤异常点击行为 和 统计广告点击次数.md
+      - 27-CEP: 大数据开发/Flink/27-CEP.md
+      - 28-案例五（风控）：CEP的应用之检测连续登录失败事件: 大数据开发/Flink/28-案例五（风控）：CEP的应用之检测连续登录失败事件.md
+      - 29-案例六：CEP检测订单支付超时: 大数据开发/Flink/29-案例六：CEP检测订单支付超时.md
+      - 30-案例七-对账: 大数据开发/Flink/30-案例七-对账.md
+    - Hadoop:
+      - 1-Hadoop的理解: 大数据开发/Hadoop/1-Hadoop的理解.md
+      - 2-Hadoop集群搭建: 大数据开发/Hadoop/2-Hadoop集群搭建.md
+      - 3-HDFS: 大数据开发/Hadoop/3-HDFS.md
+      - 4-MapReduce之WordCount: 大数据开发/Hadoop/4-MapReduce之WordCount.md
+      - 5-MapReduce之序列化: 大数据开发/Hadoop/5-MapReduce之序列化.md
+      - 6-MapReduce之任务提交及InputFormat: 大数据开发/Hadoop/6-MapReduce之任务提交及InputFormat.md
+      - 7-MapReduce之Shuffle: 大数据开发/Hadoop/7-MapReduce之Shuffle.md
+      - 8-Shuffle之分区: 大数据开发/Hadoop/8-Shuffle之分区.md
+      - 9-Shuffle之排序: 大数据开发/Hadoop/9-Shuffle之排序.md
+      - 10-MapReduce之Combiner合并: 大数据开发/Hadoop/10-MapReduce之Combiner合并.md
+      - 11-MapReduce之OutputFormat: 大数据开发/Hadoop/11-MapReduce之OutputFormat.md
+      - 12-MapReduce 源码之 MapTask 工作机制: 大数据开发/Hadoop/12-MapReduce 源码之 MapTask 工作机制.md
+      - 13-MapReduce 源码之 ReduceTask 工作机制: 大数据开发/Hadoop/13-MapReduce 源码之 ReduceTask 工作机制.md
+      - 14-MapReduce 之 Reduce Join: 大数据开发/Hadoop/14-MapReduce 之 Reduce Join.md
+      - 15-MapReduce 之 Map Join: 大数据开发/Hadoop/15-MapReduce 之 Map Join.md
+      - 16-MapReduce 之 ETL: 大数据开发/Hadoop/16-MapReduce 之 ETL.md
+      - 17-压缩: 大数据开发/Hadoop/17-压缩.md
+      - 18-Yarn: 大数据开发/Hadoop/18-Yarn.md
+      - 19-总结: 大数据开发/Hadoop/19-总结.md
+      - 20-Yarn 调度器和调度算法: 大数据开发/Hadoop/20-Yarn 调度器和调度算法.md
+    - HBase:
+      - 1-HBase安装配置: 大数据开发/HBase/1-HBase安装配置.md
+      - 2-HBase的shell命令: 大数据开发/HBase/2-HBase的shell命令.md
+      - 3-HBase表的逻辑结构 和 物理存储结构: 大数据开发/HBase/3-HBase表的逻辑结构 和 物理存储结构.md
+      - 4-HBase架构: 大数据开发/HBase/4-HBase架构.md
+      - 5-预分区 与 RowKey设计: 大数据开发/HBase/5-预分区 与 RowKey设计.md
+      - 6-WAL: 大数据开发/HBase/6-WAL.md
+      - 7-HBase写数据流程 以及 MemStore的刷写时机: 大数据开发/HBase/7-HBase写数据流程 以及 MemStore的刷写时机.md
+      - 8-StoreFile Compaction 和 Region Split: 大数据开发/HBase/8-StoreFile Compaction 和 Region Split.md
+      - 9-HBase读数据流程: 大数据开发/HBase/9-HBase读数据流程.md
+      - 10-DDL 与 DML 操作的API: 大数据开发/HBase/10-DDL 与 DML 操作的API.md
+      - 11-HBase 与 MR交互: 大数据开发/HBase/11-HBase 与 MR交互.md
+    - Hive:
+      - 1-Hive安装配置: 大数据开发/Hive/1-Hive安装配置.md
+      - 2-DDL（数据定义语言）: 大数据开发/Hive/2-DDL（数据定义语言）.md
+      - 3-DML（数据操作语言）: 大数据开发/Hive/3-DML（数据操作语言）.md
+      - 4-分区表和分桶表: 大数据开发/Hive/4-分区表和分桶表.md
+      - 5-DQL（数据查询语言）: 大数据开发/Hive/5-DQL（数据查询语言）.md
+      - 6-排序: 大数据开发/Hive/6-排序.md
+      - 7-Hive函数: 大数据开发/Hive/7-Hive函数.md
+      - 8-UDF之与数学、集合、类型转换 和 日期 相关的函数: 大数据开发/Hive/8-UDF之与数学、集合、类型转换 和 日期 相关的函数.md
+      - 9-UDF 之 条件函数 和 字符串函数: 大数据开发/Hive/9-UDF 之 条件函数 和 字符串函数.md
+      - 10-UDAF函数: 大数据开发/Hive/10-UDAF函数.md
+      - 11-UTDF 之 explode函数 和 LATERAL VIEW: 大数据开发/Hive/11-UTDF 之 explode函数 和 LATERAL VIEW.md
+      - 12-其它函数: 大数据开发/Hive/12-其它函数.md
+      - 13-用户自定义函数: 大数据开发/Hive/13-用户自定义函数.md
+      - 14-窗口: 大数据开发/Hive/14-窗口.md
+      - 15-grouping sets子句: 大数据开发/Hive/15-grouping sets子句.md
+      - 16-文件格式: 大数据开发/Hive/16-文件格式.md
+      - 17-压缩: 大数据开发/Hive/17-压缩.md
+      - 18-优化: 大数据开发/Hive/18-优化.md
+      - 19-练习: 大数据开发/Hive/19-练习.md
+    - Kafka:
+      - 1-Kafka架构及理解: 大数据开发/Kafka/1-Kafka架构及理解.md
+      - 2-Kafka安装: 大数据开发/Kafka/2-Kafka安装.md
+      - 3-kafka的shell命令 及 Kafka文件存储机制: 大数据开发/Kafka/3-kafka的shell命令 及 Kafka文件存储机制.md
+      - 4-生产者和Kafka之间的 消息丢失 和 消息重复: 大数据开发/Kafka/4-生产者和Kafka之间的 消息丢失 和 消息重复.md
+      - 5-生产者的分区策略 及 生产者API: 大数据开发/Kafka/5-生产者的分区策略 及 生产者API.md
+      - 6-自定义生产者发送数据的拦截器: 大数据开发/Kafka/6-自定义生产者发送数据的拦截器.md
+      - 7-消费者组的offset 和 消费者组的分区分配策略: 大数据开发/Kafka/7-消费者组的offset 和 消费者组的分区分配策略.md
+      - 8-消费者提交offset 及 消费者的 消费丢失 和 重复消费 问题: 大数据开发/Kafka/8-消费者提交offset 及 消费者的 消费丢失 和 重复消费 问题.md
+      - 9-Flume 与 Kafka 对接: 大数据开发/Kafka/9-Flume 与 Kafka 对接.md
+    - Scala:
+      - 1-Hello Scala: 大数据开发/Scala/1-Hello Scala.md
+      - 2-伴生类 和 伴生对象: 大数据开发/Scala/2-伴生类 和 伴生对象.md
+      - 3-变量和数据类型: 大数据开发/Scala/3-变量和数据类型.md
+      - 4-运算符: 大数据开发/Scala/4-运算符.md
+      - 5-函数式编程: 大数据开发/Scala/5-函数式编程.md
+      - 6-面向对象: 大数据开发/Scala/6-面向对象.md
+      - 7-集合: 大数据开发/Scala/7-集合.md
+      - 8-模式匹配: 大数据开发/Scala/8-模式匹配.md
+      - 9-异常、隐式转换 和 泛型: 大数据开发/Scala/9-异常、隐式转换 和 泛型.md
+      - 10-Scala的方法 与 Java的方法引用: 大数据开发/Scala/10-Scala的方法 与 Java的方法引用.md
+    - Spark:
+      - 1-Spark快速上手: 大数据开发/Spark/1-Spark快速上手.md
+      - 2-Spark 核心组件 和 Yarn Client 模式: 大数据开发/Spark/2-Spark 核心组件 和 Yarn Client 模式.md
+      - 3-RDD的创建: 大数据开发/Spark/3-RDD的创建.md
+      - 4-RDD并行度与分区: 大数据开发/Spark/4-RDD并行度与分区.md
+      - 5-RDD转换算子 之 Value 类型: 大数据开发/Spark/5-RDD转换算子 之 Value 类型.md
+      - 6-RDD Value 类型转换算子 之 groupBy: 大数据开发/Spark/6-RDD Value 类型转换算子 之 groupBy.md
+      - 7-Spark的理解: 大数据开发/Spark/7-Spark的理解.md
+      - 8-向Yarn集群提交Spark应用: 大数据开发/Spark/8-向Yarn集群提交Spark应用.md
+      - 9-RDD的 依赖关系、Shuffle、阶段划分、任务划分: 大数据开发/Spark/9-RDD的 依赖关系、Shuffle、阶段划分、任务划分.md
+      - 10-RDD转换算子 之 Value 类型（续）: 大数据开发/Spark/10-RDD转换算子 之 Value 类型（续）.md
+      - 11-RDD转换算子 之 双value类型: 大数据开发/Spark/11-RDD转换算子 之 双value类型.md
+      - 12-RDD转换算子 之 Key-Value 类型: 大数据开发/Spark/12-RDD转换算子 之 Key-Value 类型.md
+      - 13-RDD行动算子: 大数据开发/Spark/13-RDD行动算子.md
+      - 14-闭包与序列化: 大数据开发/Spark/14-闭包与序列化.md
+      - 15-持久化: 大数据开发/Spark/15-持久化.md
+      - 16-累加器: 大数据开发/Spark/16-累加器.md
+      - 17-广播变量: 大数据开发/Spark/17-广播变量.md
+      - 18-SparkCore案例实操: 大数据开发/Spark/18-SparkCore案例实操.md
+      - 20-SparkSQL命令行中使用: 大数据开发/Spark/20-SparkSQL命令行中使用.md
+      - 21-SparkSQL IDEA中使用: 大数据开发/Spark/21-SparkSQL IDEA中使用.md
+      - 22-SparkSQL用户自定义函数: 大数据开发/Spark/22-SparkSQL用户自定义函数.md
+      - 23-SparkSQL 数据的加载和保存: 大数据开发/Spark/23-SparkSQL 数据的加载和保存.md
+      - 24-SparkSQL 连接 Hive: 大数据开发/Spark/24-SparkSQL 连接 Hive.md
+      - 26-SparkStreaming获取数据的方式: 大数据开发/Spark/26-SparkStreaming获取数据的方式.md
+      - 27-SparkStreaming原语: 大数据开发/Spark/27-SparkStreaming原语.md
+    - ZooKeeper:
+      - 1-Zookeeper 的理解: 大数据开发/ZooKeeper/1-Zookeeper 的理解.md
+      - 2-zookeeper的安装及配置: 大数据开发/ZooKeeper/2-zookeeper的安装及配置.md
+      - 3-zookeeper客户端命令: 大数据开发/ZooKeeper/3-zookeeper客户端命令.md
+      - 4-zookeeper监听通知机制: 大数据开发/ZooKeeper/4-zookeeper监听通知机制.md
+      - 5-ZooKeeper 分布式锁案例: 大数据开发/ZooKeeper/5-ZooKeeper 分布式锁案例.md
+    - 数据仓库:
+      - 项目总结: 大数据开发/数据仓库/项目总结.md
+      - 1-电商数仓架构: 大数据开发/数据仓库/1-电商数仓架构.md
+      - 2-数据采集通道: 大数据开发/数据仓库/2-数据采集通道.md
+      - 3-数仓建模: 大数据开发/数据仓库/3-数仓建模.md
+      - 4-ODS层: 大数据开发/数据仓库/4-ODS层.md
+      - 5-Hive on Spark 搭建: 大数据开发/数据仓库/5-Hive on Spark 搭建.md
+      - 6-DIM层: 大数据开发/数据仓库/6-DIM层.md
+      - 7-DWD层: 大数据开发/数据仓库/7-DWD层.md
+      - 8-DWS层: 大数据开发/数据仓库/8-DWS层.md
+      - 9-DWT层: 大数据开发/数据仓库/9-DWT层.md
+      - 10-ADS层: 大数据开发/数据仓库/10-ADS层.md
+      - 11-azkaban: 大数据开发/数据仓库/11-azkaban.md
+      - 12-YAML: 大数据开发/数据仓库/12-YAML.md
+      - 13-数仓其它: 大数据开发/数据仓库/13-数仓其它.md
+
+

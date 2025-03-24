@@ -1,0 +1,61 @@
+{% extends "main.html" %}{% block tabs %}{{ super() }}
+
+<!-- 深色/浅色模式切换时更换图片 -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+        const image = document.getElementById('myImage');
+        // 根据属性值切换图片
+        if (palette.color.scheme === "slate") {
+            image.src = './assets/images/coding.gif';
+        } else {
+            image.src = './assets/images/top_img.gif';
+        }
+        }
+    })
+  })
+</script>
+
+<div class="md-grid" style="margin: 0 auto; padding: 20px; line-height: 1.5; border: 1px solid #ccc;">
+    <!-- knock code pictures 敲代码的图片 -->
+    <img src="./assets/images/top_img.gif" style="display: block; margin: 0 auto; max-width: 100%;"  id="myImage"/>
+
+    <!-- for beauty 留个空行好看点 -->
+    <div style="margin-bottom: 20px;"></div>
+
+    <!-- profile logo 个人资料徽标 -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <a href="https://www.zhihu.com/people/moon-22-14-15"><img src="https://img.shields.io/badge/zhihu-知乎-blue" /></a>&emsp;
+        <a href="https://blog.csdn.net/weixin_39654122?spm=1000.2115.3001.5343"><img src="https://img.shields.io/badge/CSDN-博客-8c36db" /></a>&emsp;
+        <a href="https://github.com/Jmoon531"><img src="https://img.shields.io/badge/GitHub-ff69b4" /></a>&emsp;
+    </div>
+
+    <!-- 标题 --><!-- 关于我 -->
+    <h1 style="font-size: 2.2em; margin-bottom: 0.5em;">👋 Welcome here</h1>
+
+    <div style="width: 100%; margin-bottom: 20px; border: 1px solid #eee; padding: 10px; font-size: 1.8em;">
+          &emsp;&emsp;嗨，你好🤝，我是 J-moon，欢迎来到我的博客🎉，这里积攒了我学习 <code style="background-color: #f0f0f0; padding: 0px;">Java后端开发</code> 和 <code style="background-color: #f0f0f0; padding: 0px;">大数据开发</code> 的笔记，期待您能在此停留片刻，希望我的分享能给您带来一点启发。
+        如果您有任何疑问，或者发现文中的错误，欢迎在 <a href="https://github.com/Jmoon531/Jmoon531.github.io/issues" style="color: blue; text-decoration: underline;">issues</a> 留言，或者直接在页面下方进行评论😊。
+    </div>
+
+    {% include "partials/comments.html" %}
+</div>
+{% endblock %} 
+
+{% block site_nav %}{% endblock %}
+{% block container %}{% endblock %}
+{% block footer %}
+  <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        {% include "partials/copyright.html" %}
+        {% if config.extra.social %}
+          {% include "partials/social.html" %}
+        {% endif %}
+      </div>
+    </div>
+  </footer>
+{% endblock %}
