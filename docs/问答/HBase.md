@@ -19,7 +19,7 @@ HBase表的逻辑结构只涉及这个概念：**RowKey、列族、列、timesta
 
 ### HBase架构？
 
-![Snipaste_2021-09-12_21-25-52](images/HBase架构.png)
+![Snipaste_2021-09-12_21-25-52](./images/HBase架构.png)
 
 HBase的主要组成是：Master、RegionServer、Client
 
@@ -57,7 +57,7 @@ HBase的主要组成是：Master、RegionServer、Client
 
 ### HBase写数据流程？
 
-<img src="images/HBase写数据流程.png" alt="Image" style="zoom:80%;" />
+![](./images/HBase写数据流程.png)
 
 在HBase中，任何形式的写数据，比如插入、删除、修改，都是新增一条带有时间戳的新数据。
 
@@ -89,7 +89,7 @@ Compaction 分为两种，分别是 Minor Compaction 和 Major Compaction。
 
 ### HBase读数据流程？
 
-<img src="images/HBase读数据流程.png" alt="Image" style="zoom:80%;" />
+![](./images/HBase读数据流程.png)
 
 1. Client 先访问 zookeeper，获取 hbase:meta 表位于哪个 HRegionServer，并将 meta 表的位置信息缓存在客户端的 meta cache。
 2. 访问hbase:meta 表位于的 RegionServer，查询rowkey（`namespace:table/rowkey`）位于哪个 RegionServer 中的哪个 Region 中，并将region 信息缓存在客户端的 meta cache。
@@ -127,7 +127,7 @@ WAL是数据库保证数据写入的**低延时**和**持久性**常用的技术
 
 ### 简单介绍一下LSM-Tree（ Log Structured Merge Tree）？
 
-<img src="images/LSM-Tree.png" alt="image-20220725201711356" style="zoom: 67%;" />
+![](./images/LSM-Tree.png)
 
 
 

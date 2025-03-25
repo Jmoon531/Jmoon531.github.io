@@ -53,7 +53,7 @@ AIO即异步IO，BIO和IO多路复用都有阻塞，异步IO完全没有阻塞�
 
 ------
 
-<img title="" src="images/红黑树.png" alt="" width="690">
+![](./images/红黑树.png)
 
 **红黑树的性质：**
 

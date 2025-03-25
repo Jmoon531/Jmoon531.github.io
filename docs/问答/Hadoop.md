@@ -1,6 +1,6 @@
 #### HDFS架构？
 
-<img src="images/HDFS架构.png" title="" alt="" width="509">
+![](./images/HDFS架构.png)
 
 HDFS采用主从（Master/Slave）架构，由HDFSClient、NameNode、DataNode和SecondaryNameNode四部分组成。
 
@@ -22,7 +22,7 @@ HDFS采用主从（Master/Slave）架构，由HDFSClient、NameNode、DataNode�
 
 #### HDFS写数据流程？
 
-<img src="images/HDFS写数据流程.png" alt="Image" style="zoom: 80%;" />
+![](./images/HDFS写数据流程.png)
 
 1. 客户端通过Distributed FileSystem模块向NameNode请求上传文件。
 2. NameNode检查目标文件是否已存在，父目录是否存在，NameNode返回是否可以上传。
@@ -34,7 +34,7 @@ HDFS采用主从（Master/Slave）架构，由HDFSClient、NameNode、DataNode�
 
 #### HDFS读数据流程？
 
-<img src="images/HDFS读数据流程.png" alt="Image" style="zoom:80%;" />
+![](./images/HDFS读数据流程.png)
 
 1. 客户端通过DistributedFileSystem向NameNode请求下载文件，NameNode通过查询元数据，找到文件块所在的DataNode地址。
 2. 挑选一台DataNode（就近原则，然后随机）服务器，请求读取数据。
@@ -59,7 +59,7 @@ InputFormat抽象类是最顶级的抽象类，它一共也就只定义了两个
 
 InputFormat有众多的子类，比较重要的子类是抽象类FileInputFormat，FileInputFormat实现了getSplits()方法，该方法的切片计算逻辑主要是对每个文件进行切片，FileInputFormat比较重要的子类有**TextInputFormat**和抽象类CombineFileInputFormat，CombineFileInputFormat重写了FileInputFormat的getSplits()方法，该方法的切片计算逻辑主要是将小文件合并之后一起切，CombineFileInputFormat比较重要的子类是**CombineTextInputFormat**。
 
-<img src="images\InputFormat.png" style="zoom: 67%;" />
+![](./images/InputFormat.png)
 
 切片只是逻辑上的，并没有真正将文件拆分，意思是getSplits()方法只是计算得到了MaskTask运行时的读取数据的计划，MaskTask在运行时会按照切片计算的结果读取数据。
 
@@ -94,7 +94,7 @@ CombineTextInputFormat的切片包括两个过程： 虚拟存储过程、切片
 
 （b） 如果不大于则跟下一个虚拟存储文件进行合并，共同形成一个切片。
 
-<img src="images/CombineTextInputFormat.png" alt="image-20211207203635948" style="zoom: 67%;" />
+![](./images/CombineTextInputFormat.png)
 
 #### ReduceTask的个数？
 
@@ -167,7 +167,7 @@ key必须实现WritableCompare接口，value可以只实现Writable接口。因�
 
 #### Yarn架构和工作流程？
 
-<img src="images/yarn架构.png" title="" alt="" width="719">
+![](./images/yarn架构.png)
 
 主要记住这个东西：
 
@@ -191,7 +191,7 @@ yarn由ResoureManager和NodeManager组成，这两个进程是分布式集群里
 
 **容量调度器**：Capacity 调度器允许多个组织共享整个集群，每个组织可以获得集群的一部分计算能力。通过为每个组织分配专门的队列，然后再为每个队列分配一定的集群资源，这样整个集群就可以通过设置多个队列的方式给多个组织提供服务了。除此之外，队列内部又可以垂直划分，这样一个组织内部的多个成员就可以共享这个队列资源了，在一个队列内部，资源的调度是采用的是先进先出(FIFO)策略。
 
-![preload](images/yarn容量调度器.png)
+![preload](./images/yarn容量调度器.png)
 
 **公平调度器**：公平调度器的设计目标是为所有的应用分配公平的资源（对公平的定义可以通过参数来设置），公平调度在也可以在多个队列间工作。
 

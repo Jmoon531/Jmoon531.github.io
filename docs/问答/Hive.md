@@ -2,7 +2,7 @@
 
 Hive既不负责数据的存储也不负责数据的计算，hive的主要工作是负责SQL解析和维护元数据信息，数据储存在HDFS上，计算可以选择MapReduce、Tez或者Spark，元数据可以存储在MySQL或者deby等关系型数据库中。
 
-<img src="images/hive架构.png" alt="image-20220723212443417" style="zoom:60%;" />
+![](./images/hive架构.png)
 
 hive sql的执行过程：
 
@@ -13,7 +13,7 @@ hive sql的执行过程：
 
 Hive SQL编译成MapReduce或Spark程序的过程：
 
-![img](images/hivesql编译过程.png)
+![img](./images/hivesql编译过程.png)
 
 1. **词法、语法解析**: Antlr 定义 SQL 的语法规则，完成 SQL 词法，语法解析，将 SQL 转化为抽象语法树 AST Tree；
 2. **语义解析**: 遍历 AST Tree，抽象出查询的基本组成单元 QueryBlock；
@@ -69,7 +69,7 @@ TextFile和SequenceFile是行式存储；orc和parquet是列式存储。
 
 ORC的存储格式是：数据按行分块，每块按照列存储。只有Bzip和LZO的压缩格式支持分割，其他不支持。
 
-<img src="images/hive存储与压缩.jpg" alt="img" style="zoom:50%;" />
+![](./images/hive存储与压缩.jpg)
 
 > [一文搞懂Hive的存储格式与压缩格式](https://www.ikeguang.com/article/1805)
 

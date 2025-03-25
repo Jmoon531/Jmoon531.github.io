@@ -121,24 +121,23 @@ copyright: Copyright &copy; 2025 J-moon #版权信息
 nav:
   - home: index.md
   - Java基础:
-    - Java基础:
-- Java基础:
-      - 1-IO: Java基础/1-IO.md
-      - 2-进程与线程 和 进程间的通信方式: Java基础/2-进程与线程 和 进程间的通信方式.md
-      - 3-BIO之网络IO: Java基础/3-BIO之网络IO.md
-      - 4-NIO之缓冲区和通道: Java基础/4-NIO之缓冲区和通道.md
-      - 5-NIO之选择器与IO多路复用: Java基础/5-NIO之选择器与IO多路复用.md
-      - 6-NIO之网络编程应用实例-群聊系统: Java基础/6-NIO之网络编程应用实例-群聊系统.md
-      - 7-ArrayList源码笔记: Java基础/7-ArrayList源码笔记.md
-      - 8-HashMap源码笔记: Java基础/8-HashMap源码笔记.md
-      - 9-docker: Java基础/9-docker.md
-      - 10-git: Java基础/10-git.md
-      - 11-maven: Java基础/11-maven.md
-      - 12-nginx: Java基础/12-nginx.md
-      - 13-redis: Java基础/13-redis.md
-      - 14-Stream 和 Optional: Java基础/14-Stream 和 Optional.md
-      - IO: Java基础/IO.md
-      - Lambda: Java基础/Lambda.md
+    - 基础知识:
+      - 1-IO: Java基础/基础知识/1-IO.md
+      - 2-进程与线程 和 进程间的通信方式: Java基础/基础知识/2-进程与线程 和 进程间的通信方式.md
+      - 3-BIO之网络IO: Java基础/基础知识/3-BIO之网络IO.md
+      - 4-NIO之缓冲区和通道: Java基础/基础知识/4-NIO之缓冲区和通道.md
+      - 5-NIO之选择器与IO多路复用: Java基础/基础知识/5-NIO之选择器与IO多路复用.md
+      - 6-NIO之网络编程应用实例-群聊系统: Java基础/基础知识/6-NIO之网络编程应用实例-群聊系统.md
+      - 7-ArrayList源码笔记: Java基础/基础知识/7-ArrayList源码笔记.md
+      - 8-HashMap源码笔记: Java基础/基础知识/8-HashMap源码笔记.md
+      - 9-docker: Java基础/基础知识/9-docker.md
+      - 10-git: Java基础/基础知识/10-git.md
+      - 11-maven: Java基础/基础知识/11-maven.md
+      - 12-nginx: Java基础/基础知识/12-nginx.md
+      - 13-redis: Java基础/基础知识/13-redis.md
+      - 14-Stream 和 Optional: Java基础/基础知识/14-Stream 和 Optional.md
+      - IO: Java基础/基础知识/IO.md
+      - Lambda: Java基础/基础知识/Lambda.md
     - Linux:
       - 1-目录结构: Java基础/Linux/1-目录结构.md
       - 2-vim: Java基础/Linux/2-vim.md
@@ -400,23 +399,23 @@ nav:
       - 11-azkaban: 大数据开发/数据仓库/11-azkaban.md
       - 12-YAML: 大数据开发/数据仓库/12-YAML.md
       - 13-数仓其它: 大数据开发/数据仓库/13-数仓其它.md
-    - 问答:
-      - Flink: 问答/Flink.md
-      - Hadoop: 问答/Hadoop.md
-      - HBase: 问答/HBase.md
-      - Hive: 问答/Hive.md
-      - Java基础: 问答/Java基础.md
-      - JVM: 问答/JVM.md
-      - Kafka: 问答/Kafka.md
-      - MySQL高级: 问答/MySQL高级.md
-      - Redis: 问答/Redis.md
-      - Spark: 问答/Spark.md
-      - Spring: 问答/Spring.md
-      - Zookeeper: 问答/Zookeeper.md
-      - 大数据面试题: 问答/大数据面试题.md
-      - 并发编程: 问答/并发编程.md
-      - 操作系统: 问答/操作系统.md
-      - 离线数仓: 问答/离线数仓.md
-      - 计算机网络: 问答/计算机网络.md
+  - 问答:
+    - Flink: 问答/Flink.md
+    - Hadoop: 问答/Hadoop.md
+    - HBase: 问答/HBase.md
+    - Hive: 问答/Hive.md
+    - Java基础: 问答/Java基础.md
+    - JVM: 问答/JVM.md
+    - Kafka: 问答/Kafka.md
+    - MySQL高级: 问答/MySQL高级.md
+    - Redis: 问答/Redis.md
+    - Spark: 问答/Spark.md
+    - Spring: 问答/Spring.md
+    - Zookeeper: 问答/Zookeeper.md
+    - 大数据面试题: 问答/大数据面试题.md
+    - 并发编程: 问答/并发编程.md
+    - 操作系统: 问答/操作系统.md
+    - 离线数仓: 问答/离线数仓.md
+    - 计算机网络: 问答/计算机网络.md
 
 

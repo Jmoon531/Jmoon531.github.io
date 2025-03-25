@@ -1,6 +1,6 @@
 #### Kafka的架构？
 
-<img src="images/Kafka架构.png" style="zoom: 67%;" />
+![](./images/Kafka架构.png)
 
 生产者和消费者按topic生产和消费消息，Kafka的每一个topic可以被分成多个分区，每个分区可以有多个副本，多个副本中有一个leader和多个follower，客户端只与leader进行交互，follower只负责备份数据，同一个分区的副本必须分布在不同的broker上，所以分区的副本数不能设置超过Kafka集群中的broker数。
 

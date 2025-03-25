@@ -2,21 +2,25 @@
 
 <!-- 深色/浅色模式切换时更换图片 -->
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    var ref = document.querySelector("[data-md-component=palette]")
-    ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-        const image = document.getElementById('myImage');
-        // 根据属性值切换图片
-        if (palette.color.scheme === "slate") {
-            image.src = './assets/images/coding.gif';
-        } else {
-            image.src = './assets/images/top_img.gif';
-        }
-        }
-    })
-  })
+        // 监听 body 标签的 data-md-color-primary 属性变化
+        const body = document.body;
+        const observer = new MutationObserver(function(mutationsList) {
+            for (const mutation of mutationsList) {
+                if (mutation.attributeName === 'data-md-color-primary') {
+                    const image = document.getElementById('myImage');
+                    const primaryColor = body.getAttribute('data-md-color-primary');
+                    if (primaryColor === 'black') {
+                        image.src = './assets/images/coding.gif';
+                    } else if (primaryColor === 'white') {
+                        image.src = './assets/images/top_img.gif';
+                    }
+                }
+            }
+        });
+        // 配置观察选项
+        const config = { attributes: true, attributeFilter: ['data-md-color-primary'] };
+        // 开始观察 body 标签
+        observer.observe(body, config);
 </script>
 
 <div class="md-grid" style="margin: 0 auto; padding: 20px; line-height: 1.5; border: 1px solid #ccc;">

@@ -10,7 +10,7 @@
 
 ### 详细介绍一下Flink的运行架构？
 
-<img title="" src="./images/flink-running.png" alt="" width="574">
+![](./images/flink-running.png)
 
 由 Client 提交任务给 JobManager，JobManager 再调度任务到各个TaskManager 去执行。
 
@@ -34,7 +34,7 @@ TaskManager 在启动前就设置好了槽位数（slot），slot数就是每个
 
 TaskManager 从 JobManager 处接收子任务后，就会启动线程来执行子任务。因为同一算子的子任务必须在不同的slot上执行，所以一个算子的并行度不能超过所有TaskManager总的slot数，不然就无法满足作业执行的最少资源。
 
-<img title="" src="images/flink_slot.png" alt="" width="650">
+![](./images/flink_slot.png)
 
 ### 算子的并行度如何设置？
 
@@ -122,7 +122,7 @@ Flink 作业由三部分组成，**源** Source、**转换** transformation、
 
 ### Flink的广播机制了解？广播流？
 
-<img title="" src="./images/Flink广播机制.png" alt="" width="609">
+![](./images/Flink广播机制.png)
 
 广播变量是发给TaskManager的内存中，将一个数据广播后，不同的TaskManager都可以在节点上获取到，每个节点只存一份， 如果不使用广播，每一个slot都会拷贝一份数据集，造成内存资源浪费。
 

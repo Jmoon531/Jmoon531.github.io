@@ -81,7 +81,7 @@ Spring AOP使用CGLIB 和 JDK动态代理实现了代理模式，默认使用JDK
 
 #### Spring 声明式事务的传播方式？
 
-<img src="./images/Spring事务的传播方式.png" alt="Spring事务的传播方式" style="zoom:80%;" />
+![](./images/Spring事务的传播方式.png)
 
 #### SpringMVC拦截器？
 
@@ -213,7 +213,7 @@ Seata管理分布式事务的流程：
 
 总结来说，Seata把2pc的协调者分成了两个角色，TM和TC，独立TC的进程方便使用Paxos等共识算法实现高可用，分布式事务的提交点肯定是持久化在TC中。
 
-<img src="./images/seata.png" alt="seata" style="zoom: 67%;" />
+![](./images/seata.png)
 
 #### AT模式？
 

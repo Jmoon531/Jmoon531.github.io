@@ -36,7 +36,7 @@ Hash：包含键值对的无序散列表。
 
 #### Redis的底层数据结构？
 
-<img src="images/Redis底层数据结构.png" alt="image-20211129214602845" style="zoom: 33%;" />
+![](./images/redis底层数据结构.png)
 
 > https://i6448038.github.io/2019/12/01/redis-data-struct/
 
@@ -57,25 +57,25 @@ Hash：包含键值对的无序散列表。
 
 ##### 字符串
 
-<img src="images/object_string.png" alt="img"  />
+![](./images/object_string.png)
 
 其中：embstr和raw都是由SDS动态字符串构成的。唯一区别是：raw是分配内存的时候，redisobject和 sds 各分配一块内存，而embstr是redisobject和raw在一块儿内存中。
 
 ##### 列表
 
-<img src="images/object_list.png" alt="image-20211202085842711"  />
+![](./images/object_list.png)
 
 ##### hash
 
-![img](images/object_hash.png)
+![img](./images/object_hash.png)
 
 ##### set
 
-![img](images/object_set.png)
+![img](./images/object_set.png)
 
 ##### zset
 
-![img](images/object_zset.png)
+![img](./images/object_zset.png)
 
 #### redis为什么这么快？
 
