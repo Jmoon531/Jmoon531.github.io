@@ -4,7 +4,7 @@ import yaml
 # 运行：python dir_to_yaml.py > dir.txt
 
 # Bug fix: Fix the string literal termination issue and add a comment to indicate that the base_path parameter is not currently used.
-def directory_to_yaml(path, base_path='D:\\Project\\trae_project\\Jmoon531.github.io\\docs\\nav'):
+def directory_to_yaml(path, base_path='D:\\Project\\trae_project\\Jmoon531.github.io\\docs\\Java基础'):
     """
     此函数用于将指定目录下的所有目录和文件的结构转换为 YAML 格式。
     :param path: 要处理的目录路径
@@ -42,7 +42,7 @@ def directory_to_yaml(path, base_path='D:\\Project\\trae_project\\Jmoon531.githu
     return result
 
 # 指定要处理的目录
-directory_path = './docs/nav'  # 这里可以修改为你想要处理的目录路径
+directory_path = './docs/Java基础'  # 这里可以修改为你想要处理的目录路径
 structure = directory_to_yaml(directory_path)
 
 # 将结构转换为 YAML 格式并打印
